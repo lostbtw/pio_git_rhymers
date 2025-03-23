@@ -10,11 +10,7 @@ public class DefaultCountingOutRhymer {
     public int getTotal() {
         return total;
     }
-
-    public void setTotal(int total) {
-        this.total = total;
-    }
-
+    
     private int total = TOTAL_START;
 
     protected void countIn(int in) {
