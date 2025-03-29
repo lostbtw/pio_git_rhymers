@@ -1,21 +1,25 @@
 package edu.kis.vh.nursery;
 
-public class FIFORhymer extends defaultCountingOutRhymer {
+/**
+ * Działa tak samo jak klasa DefaltCountingOutRhymer z zamieniona funkcja countOut
+ */
+public class FIFORhymer extends DefaultCountingOutRhymer {
 
-    public defaultCountingOutRhymer temp = new defaultCountingOutRhymer();
-    
+    private final DefaultCountingOutRhymer temp = new DefaultCountingOutRhymer();
+
+    /**
+     * Zwraca taki sam wynik jak standardowa funckja countOut (@return)
+     */
     @Override
-    public int countOut() {
+    protected int countOut() {
         while (!callCheck())
-            
-        temp.countIn(super.countOut());
-        
+            temp.countIn(super.countOut());
+
         int ret = temp.countOut();
-        
+
         while (!temp.callCheck())
-            
-        countIn(temp.countOut());
-        
+            countIn(temp.countOut());
+
         return ret;
     }
 }
