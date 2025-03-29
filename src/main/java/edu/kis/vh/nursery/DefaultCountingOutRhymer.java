@@ -4,7 +4,7 @@ public class DefaultCountingOutRhymer {
 
     private static final int ERROR_CODE_DEFAULT = -1;
     private static final int TOTAL_START = -1;
-    private static final int NUMBERS_LENGTH = 12;
+    private static final int NUMBERS_LENGTH = 12; // TODO: Zrobić dynamiczną deklarację długości numbers dla zwiększenia elastyczności.
     private final int[] numbers = new int[NUMBERS_LENGTH];
 
     public int getTotal() {
@@ -13,7 +13,7 @@ public class DefaultCountingOutRhymer {
     
     private int total = TOTAL_START;
 
-    protected void countIn(int in) {
+    protected void countIn(int in) {  // TODO: Dodaj walidację danych wejściowych
         if (!isFull())
             numbers[++total] = in;
     }
@@ -26,7 +26,7 @@ public class DefaultCountingOutRhymer {
         return total == NUMBERS_LENGTH - 1;
     }
 
-    protected int peekaboo() {
+    protected int peekaboo() { // TODO: Zmień nazwę metody 'peekaboo' na bardziej opisową
         if (callCheck())
             return ERROR_CODE_DEFAULT;
         return numbers[total];
